@@ -1,0 +1,31 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+<bean class="com.deloitte.AirtelSim" id="airtel">
+
+     <property name="callCharge" value=".85"/>
+<property name="speed" value="5.2"/>
+<property name = "ms">
+<bean class="com.deloitte.MessageSender" >
+
+<property name="smsCharge" value="2.5"/>
+<property name="mmsCharge" value="5.5"/>
+</bean>
+</property>
+</bean>
+<bean class="com.deloitte.JioSim" id="jio">
+<property name="callCharge" value=".6"/>
+<property name="speed" value="8.2"/>
+<property name="ms">
+<bean class="com.deloitte.MessageSender" >
+
+<property name="smsCharge" value="2.5"/>
+<property name="mmsCharge" value="5.5"/>
+</bean>
+
+
+</property>
+</bean>
+</beans>
