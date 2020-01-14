@@ -2,64 +2,122 @@ package com.deloitte.demospringtool.model;
 
 import java.time.LocalDate;
 
+
+
+
+
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
+
+
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+
 
 @Entity
 
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+
 public class Product {
-	
+
+		
+
 	@Id @GeneratedValue(strategy=GenerationType.AUTO)
-	int ProductId;
-	String ProductName;
-	float Price;
+
+	int productId;
+
+	String productName;
+
+	float price;
+
 	LocalDate releasedDate;
-	
-	public  Product(){
+
+	public Product()
+
+	{
+
 		
+
+	}
+
+	public Product( String productName, float price, LocalDate releasedDate) {
+
+		super();
+
 		
+
+		this.productName = productName;
+
+		this.price = price;
+
+		this.releasedDate = releasedDate;
+
 	}
 
 	public int getProductId() {
-		return ProductId;
+
+		return productId;
+
 	}
 
 	public void setProductId(int productId) {
-		ProductId = productId;
+
+		this.productId = productId;
+
 	}
 
 	public String getProductName() {
-		return ProductName;
+
+		return productName;
+
 	}
 
 	public void setProductName(String productName) {
-		ProductName = productName;
+
+		this.productName = productName;
+
 	}
 
 	public float getPrice() {
-		return Price;
+
+		return price;
+
 	}
 
 	public void setPrice(float price) {
-		Price = price;
+
+		this.price = price;
+
 	}
 
 	public LocalDate getReleasedDate() {
+
 		return releasedDate;
+
 	}
 
 	public void setReleasedDate(LocalDate releasedDate) {
+
 		this.releasedDate = releasedDate;
+
 	}
 
 	@Override
+
 	public String toString() {
-		return "Product [ProductId=" + ProductId + ", ProductName=" + ProductName + ", Price=" + Price
+
+		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price
+
 				+ ", releasedDate=" + releasedDate + "]";
+
 	}
-	
+
 	
 
 }
