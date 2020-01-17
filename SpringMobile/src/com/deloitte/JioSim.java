@@ -1,58 +1,107 @@
 package com.deloitte;
 
-public  class JioSim implements Sim {
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+
+import org.springframework.beans.factory.annotation.Value;
+
+import org.springframework.stereotype.Component;
+
+@Component("jio")
+
+public class JioSim implements Sim {
+
+
+
+	@Value("${jio.callCharge}")
+
 	private float callCharge;
+
+	@Value("${jio.speed}")
+
 	private float speed;
+
+
+
+	@Autowired
+
+	@Qualifier("ms")
+
 	private MessageSender ms;
+
+	
+
 	public void sendSms() {
+
 		ms.sendSms();
-		System.out.println("from jio sim");
-		
+
+		System.out.println("From Airtel");
+
 	}
+
 	public void sendMms() {
+
 		ms.sendMms();
-		System.out.println("from jio sim");
-		
+
+		System.out.println("From Airtel");
+
 	}
+
 	
-	public MessageSender getMs() {
-		return ms;
-	}
-	public void setMs(MessageSender ms) {
-		this.ms = ms;
-	}
+
+	
+
+	
+
+	
+
+	
+
 	public float getCallCharge() {
+
 		return callCharge;
+
 	}
+
 	public void setCallCharge(float callCharge) {
+
 		this.callCharge = callCharge;
+
 	}
+
 	public float getSpeed() {
+
 		return speed;
+
 	}
+
 	public void setSpeed(float speed) {
+
 		this.speed = speed;
+
 	}
-//	@Override
-//	public void browse() {
-//		System.out.println("browsing with jio");
-//		
-//	}
-//	@Override
-//	public void call() {
-//		System.out.println("calling with jio");
 
+	@Override
 
-@Override
-public void browse() {
-	System.out.println("browsing with jio.....with speed"+speed+"mbps");
-	
+	public void browse() {
+
+		System.out.println("Browing with Jio...Speed "+speed+" mb/s");
+
+		
+
+	}
+
+	@Override
+
+	public void call() {
+
+		System.out.println("Calling with Jio...Charges "+callCharge+" /min");
+
+		
+
+	}
+
 }
-@Override
-public void call() {
-	System.out.println("calling with jio.....with callcharge"+callCharge+"rs");
-	
-}
-}
-
-
