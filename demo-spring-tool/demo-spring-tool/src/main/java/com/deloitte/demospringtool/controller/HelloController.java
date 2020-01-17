@@ -27,40 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.deloitte.demospringtool.model.Product;
 import com.deloitte.demospringtool.service.ProductService;
 import com.deloitte.demospringtool.util.ProductNotFoundException;
-
-
-
-
-
-
 @RestController
-
-
-
 public class HelloController {
 
-
-
-//	@GetMapping("/hello")
-
-//	public String sayHello(Model m)
-
-//	{
-
-//		System.out.println("hello");
-
-//		m.addAttribute("msg","How are you?");
-
-//		return "show";
-
-//	}
-
 		@Autowired
-
-		ProductService service;
-
-	
-
+	ProductService service;
 		@PostMapping("/products")//post mapping is for creating resources
 
 		public Product saveProduct(@RequestBody Product product)
