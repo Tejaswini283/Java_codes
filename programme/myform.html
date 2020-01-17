@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <title>
+
+            DOCUMENT
+        </title>
+
+    </head>
+    <body>
+        <form action="submitted.html" onsubmit="return validate()">
+            Enter name:<input type="text" id="t1" value="">
+            Enter password:<input type="password" id="p1" value="">
+            <input type="submit">
+
+        </form>
+        <script>
+        function validate(){
+            var t1=document.getElementById("t1");
+            var p1=document.getElementById("p1");
+            var d1=document.getElementById("d1");
+            if(t1.value=='')
+            {
+                t1.focus();
+                t1.style.border='1 solid red';
+                d1.innerHTML="*ENTER NAME*"
+                return false;
+            }
+            if(p1.value=='')
+            {
+                p1.focus();
+                p1.style.border='1 solid red';
+                d1.innerHTML="*ENTER PASSWORD*"
+                return false;
+            }
+
+            if(document.getElementById("t1").value==''){
+                return false;
+            }
+            if(document.getElementById("p1").value==''){
+                return false;
+            }
+            console.log("validation done")
+            return true;
+        }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+1)SQL> select * from employee where(hiredate between'01-FEB-81'AND '28-FEB-81') AND COMM>400;
+
+     EMPNO ENAME                          JOB
+---------- ------------------------------ ------------------------------
+HIREDATE         MGR        SAL       COMM     DEPTNO
+--------- ---------- ---------- ---------- ----------
+      7251 WARD                           SALESMAN
+22-FEB-81       7698       1250        500         30
+
+
+
+
+2)SQL> select count(*) from employee where comm is NULL or comm=0;
+
+  COUNT(*)
+----------
+        11
